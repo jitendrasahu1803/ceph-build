@@ -31,8 +31,8 @@
       - choice:
           name: CEPH_REPO
           choices:
-            - https://github.com/ceph/ceph-ci
-            - https://github.com/ceph/ceph
+            - https://github.com/jitendrasahu1803/ceph/ceph-ci
+            - https://github.com/jitendrasahu1803/ceph/ceph
 
       - string:
           name: DISTROS
