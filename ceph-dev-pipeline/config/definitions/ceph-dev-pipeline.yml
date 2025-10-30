@@ -1,6 +1,6 @@
 - job:
-    name: ceph-dev-pipeline
-    description: ceph-dev-pipeline
+    name: ceph-dev-pipeline-test
+    description: ceph-dev-pipeline-test
     project-type: pipeline
     quiet-period: 1
     concurrent: true
