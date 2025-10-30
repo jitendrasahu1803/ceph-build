@@ -1,4 +1,4 @@
-ceph_build_repo = "https://github.com/ceph/ceph-build"
+ceph_build_repo = "https://github.com/jitendrasahu1803/ceph/ceph-build"
 ceph_build_branch = "main"
 base_node_label = "gigantic"
 ubuntu_releases = [
