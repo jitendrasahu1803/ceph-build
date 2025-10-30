@@ -134,6 +134,8 @@ def get_ceph_release_repo_text(base_url) {
   return text.toString()
 }
 
+@Library('ceph-shared-library') _
+
 pipeline {
   agent any
   stages {
@@ -170,18 +172,8 @@ pipeline {
         }
         when {
           beforeAgent true
-          allOf {
-            expression { env.DISTROS.contains(env.DIST) }
-            expression { env.ARCHS.contains(env.ARCH) }
-            expression { env.FLAVORS.contains(env.FLAVOR) }
-            anyOf {
-              environment name: "CI_COMPILE", value: "true"
-              allOf {
-                environment name: "CI_CONTAINER", value: "true"
-                environment name: "DIST", value: "centos9"
-              }
-            }
-          }
+          // replaced the large inline allOf/anyOf block with a shared-lib call
+          expression { return shouldBuild() }
         }
         axes {
           axis {
@@ -652,3 +644,4 @@ pipeline {
     }
   }
 }
+
